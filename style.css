@@ -1,0 +1,123 @@
+body
+{
+	height: 100%;
+}
+header
+{
+	height: 33%;
+	background-color: #7451eb;
+	color: #ffffff;
+}
+
+section
+{
+	height: 39%;
+	color: #003668;
+}
+.bloc2
+{
+	display: flex;
+	justify-content: space-between;
+}
+aside
+{
+	text-align: center;
+	font-size: 8em;
+}
+
+footer
+{
+	height: 28%;
+	background-color: #003668;
+	color: #ffffff;
+}
+
+/* Commentaire */
+/*
+p{X} = X est égal au contenu qui modifiera p/h1/h2/etc 	=> On peut faire ceci p, h3{} = p et h3 seront modifié 
+si * alors toute les balises sont concernées
+si h1 + p alors h1 et le premier p seront concernées
+si p em alors tout les em des p sont concernées
+
+color = change la couleur du texte						=> color: white; silver; gray; black; red; maroon; lime; green; yellow; olive; blue; navy; fuchsia; purple; aqua; teal; ou hexadecimal #FFFFFF = blanc ou rgb(250,96,204)
+opacity = opacité										=> opacity: 0; = transparent; 1 = opaque; il faut donc jouer sur le pourçentage entre 0 et 1
+text-shadow = ombre du texte							=> text-shadow: décalage_horizontal décalage_vertical adoucissement_dégradé couleur; 3 tailles et la couleur de l'ombre
+font-weight = change le style d'écriture 				=> font-weight: bold; = gras
+font-style = change le style d'écriture					=> font-style: italic; = italique
+text-decoration = décore le texte						=> text-decoration: underline = souligné; overligne = ligne au dessus; line-through = barré
+font-size = taille du texte								=> font-size: 14px;   = possibilité d'utiliser des mot anglais (small, médium, large, xlarge, etc)
+=> recommander d'utiliser l'unité spécial "em" qui est relative est s'adapte en fonction des écrans 
+text-align = alignement									=> text-align: left; center; right; justify; =prend la largeur
+float = englobation										=> float: left; right; utiliser sur une image permet que le texte commence en haut de l'image sans la recouvrir
+clear =désactive le float pour un element ciblé			=> clear: left; right; both; both annule les 2
+font-family = police du texte							=> font-family: Impact, "arial Black", Arial;
+police les plus courante => Arial, Arial Black, Comic Sans MS, Courier New, Georgia, Impact, Times New Roman, Trebuchet MS, Verdana, sans-serif; =sans-serif est la police de "base"
+Police personalisée possible a télécharger (www.fontsquirrel.com par exemple), trouver le webfontkit, il suffit ensuite d'ajouter à notre fichier css le code css de la police personalisée voulue et les fichiers de police
+
+Bordure
+border = bordure 									=> border: taille couleur type; taille = comme pour font-size; couleur = comme pour color; type = solid, dotted, dashed, double, groove, ridge, inset, outset; le mieux reste de les tester
+border-top/border-bottom/border-right/border-left 	=> Permet de limiter la bordure à un coter
+border-radius = arrondie les bordures				=> border-radius: taille; ou taille1 / taille2;
+box-shadow = ombre les bordures						=> box-shadow: décalage_horizontal décalage_vertical adoucissement_dégradé couleur; 3 tailles et la couleur de l'ombre
+
+Fond
+background-color = changer la couleur de fond								=> background-color: #FFFFFF; même couleur que color + rgba comme rgb plus l'opacity
+background-image = ajoute une image de fond									=> background-image: url("nom");
+background-attachment = permet de fixé ou nom le fond						=> background-attachment: fixed;
+background-repeat = permet de répété ou non l'image							=> background-repeat: no-repeat;
+background-position = position de l'image									=> background-position: top right; bottom left; center;
+background = tout les autres												=> background: url("exemple") fixed no-repeat top right;
+=> on peut utiliser plusieurs image de fond en les séparant par une virgule => background: url("exemple") fixed no-repeat top right, url("exemple2") fixed no-repeat bottom right;
+
+S'utilise comme p{}
+.nom = correspond au nom ciblé par class en html
+#nom = correspond au nom ciblé par id en html
+
+Interactivité
+a:hover{} Effectuera l'action entre crochet si un lien est survolé (coloration de celui ci par exemple)
+p:hover{} Comme a:hover mais sur les paragraphes
+a:active{} Effectuera l'action lors du clic (s'utilise sur les liens principalements)
+input:focus{} permet de mettre en valeur un element de formulaire selectioné
+a:visited{} permet de modifier un lien visité, la couleur lien visité par exemple
+
+Les h1, p, etc sont des blocs que l'on peut moduler
+
+---Taille---
+width = défini la largeur occupé 							=> width: taille; La taille peut être en pixel, em ou encore en % de la fenètre
+height = défini la hauteur occupé							=> height: taille;
+min-width = défini le minimum pour la hauteur ou largeur	=> min-height: taille; Le bloc ne descendra pas sous la valeur indiqué même si la fenètre devient trop petite
+max-height = défini le maximum pour la hauteur ou largeur	=> max-width: taille; Le bloc ne montera pas au dessus de la valeur indiqué même si la fenètre devient trop grande
+
+---Marge---
+margin = Marge exterieur									=> margin: taille; Comme les tailles. => margin: taille_top taille_right taille_bottom taille_left; Permet de modifier toute les marges précisement en 1 fois, fonctionne pour paddinn
+															=> margin: auto; Centre le bloc si celui ci à une largeur/hauteur défini
+padding = Marge intérieur									=> padding: taille;				
+margin-bottom = On peut modifier qu'un seul coté de marge	=> padding-left: taille; Fonctionne avec margin/pading et left/right/bottom/top
+
+---Gestion---
+overflow = gère la visibilité du dépassement du bloc		=> overflow: hidden; Coupe le texte dépassant du bloc, visible; le laisse dépassait, scroll; ajoute une barre de défilement au bloc, auto; laisse le navigateur géré
+word-wrap = si un mot dépasse un bloc sur le coté			=> word-wrap: break-word; Force le navigateur à couper le long mot pour qu'il ne dépasse pas du bloc
+display = permet de mettre les elements d'un bloc en ligne 	=> display: flex; 
+flex-direction = permet de manipuler les elements			=> flex-direction: column; les met en colonne, column-reverse; inverse leur ordre en colonne, row-reverse; inverse leur ordre en ligne
+flex-wrap = permet de remmetre des elements à la ligne 		=> flex-wrap: wrap; si un element de la ligne n'a plus de place il se met en dessous
+justify-content = permet d'aligner horizontalement 			=> justify-content: flex-start; aligner au début, flex-end; aligner à la fin, center; aligner au centre, space-between; les disposes sur tout l'axe disponible, space-around; idem mais espace sur bord
+align-items = permet d'aligner verticalement				=> align-items: stretch; valeur par défault, flex-start; au début, flex-end; à la fin, center; centrer, baseline; sur une ligne de base (un peu comme flex-start)
+align-content = gestion element sur plusieurs ligne/colonne	=> align-content: flex-start; flex-end; center; space-between; space-around; stretch; par default
+.element:nth-child(position){} = selection ordre appariton 	=> position correspond à la position de l'élement dans le code html
+order = change la position de l'élément						=> order: 2; change l'élement à la position de base à la position 2
+flex =change la taille d'un element							=> flex: 1; prend l'espace restant si plusieurs se les partages, flex: 2; prend l'espace restant mais si avec un flex: 1; prend 2 fois plus d'espace, flex: 3; ainsi de suite
+
+-----Tableau-----
+border-collapse = permet de bordurer correctement un tableau 	=> border-collapse: collapse;
+
+-----Responssive-----
+@media screen and (max-width: 1280px){CSS} permet de définir des règles css différente pour chaque taille d'écran, supprimer du surperflux sur petit ecran ou réorganiser le site afin qu'il soit plus simple de naviguer
+Il existe de nombreuses règles permettant de construire des media queries. Je vous présente ici les principales :
+color: gestion de la couleur (en bits/pixel); height: hauteur de la zone d'affichage (fenêtre); width: largeur de la zone d'affichage (fenêtre); device-height: hauteur du périphérique; device-width: largeur du périphérique; orientation: orientation du périphérique (portrait ou paysage); media: type d'écran de sortie. Quelques-unes des valeurs possibles :
+screen  : écran « classique », handheld  : périphérique mobile, print  : impression, tv  : télévision, projection  : projecteur, all  : tous les types d'écrans.
+On peut rajouter le préfixe min-  ou max-  devant la plupart de ces règles. Ainsi, min-width  signifie « largeur minimale », max-height  « hauteur maximale », etc.
+La différence entre width  et device-width  se perçoit surtout sur les navigateurs mobiles des smartphones ; nous en reparlerons plus loin.
+Les règles peuvent être combinées à l'aide des mots suivants : only  : « uniquement » ; and  : « et » ; not  : « non ».
+
+https://openclassrooms.com/fr/courses/1603881-apprenez-a-creer-votre-site-web-avec-html5-et-css3/1608902-memento-des-proprietes-css
+*/

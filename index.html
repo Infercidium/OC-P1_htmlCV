@@ -1,0 +1,120 @@
+																								<!--Commentaire-->
+<!DOCTYPE html>																					<!--Permet au navigateur de savoir qu'il s'agit bien d'html-->
+<html>																							<!--Balise ouvrante englobant le code html-->
+	<head>																						<!--Tête de page, permet de définir ce que contiendra la page-->
+		<meta charset="UTF-8"/> 																<!--Défini le contenu (encodage), ici de l'UTF-8 soit les caracteres de base-->
+		<link rel="stylesheet" href="style.css" />																<!--Fait le lien entre la partie html et la partie css de la page web-->
+		<title> Présentation Projet 1 </title>													<!--Titre de la page, apparait dans l'onglet du navigateur-->
+	</head>
+	<body>																						<!--Corps de page, ce qui apparait à proprement parler sur la page internet-->
+		<header>
+			<h1>Maxime Vautier</h1>																	<!--Titre principal-->
+			<h2><mark>Développeur Java</mark></h2>													<!--Sous Titre -> h3 à h6 dispo--><!--mark permet de souligner-->
+		
+			<p>Bonjour, je suis Maxime, Développeur Java<br />										<!--Balise de retour à la ligne-->
+			bientôt diplômé chez OpenClassrooms.</p>												<!--Balise de paragraphe-->
+		</header>
+		<section class="bloc2">
+			<aside>
+				<p> &lt;/> </p>
+			</aside>
+			<article>
+				<h2>Mes <mark>compétences</mark></h2>
+		
+				<p>Je crée des applications Java pour le web. Voici quelques exemples d'applications sur lesquelles j'ai travaillé :</p>
+				<ul>																					<!--ul = Liste de puce par point; ol liste de puce numéroté-->																				
+					<li>Un mini jeu en ligne</li>															<!--li = Une puce de ul ou ol-->
+					<li>Une application de réservation de ticket de cinéma en ligne</li>
+					<li>Une application SaSS de gestion de projet pour les entreprises</li>
+				</ul>
+				<p>Après avoir terminé mon diplome de Développeur Web Junior chez OpenClassrooms, j'ai pourssuivi en Développement d'Applications Java.</p>
+		
+				<p>Je suis passionné par le déveuloppement backend. Je travaille énormément avec des méthodes telles que le Domain-Driven Design, les concepts SOLIDs et la gestion de projet agile.</p>
+			</article>
+		</section>
+		<footer>
+			<h2>Retrouvez-moi sur les réseaux</h2>
+			<p><mark>Une idée de projet ?</mark> Contactez-moi !<br />
+			<a href="https://twitter.com/Infercidium" target="_blank"><img src="TwitterLogo.png" alt="Logo de twitter" /></p></a>
+		</footer>
+	</body>
+</html>
+<!--
+-----Texte important-----
+<em>		</em>		texte important en l'italique
+<Strong>	</strong>	texte important en gras
+
+-----La Balise <a>-----
+Lien autre page/site 	: <a href="url_du_lien> Nom_afficher </a>
+Lien sur même page		: <a href="#mot_encre> Nom_afficher </a>	=> id="mot_encre" glissé dans une balise comme un <p> ou <h1> permet qu'une fois le mot cliqué la page desecende directement sur la ligne id correspondante => <p id="mot_encre"> blabla </p>
+Lien avec infobule		: title="Test"								=> se met après href
+Lien nouvelle onglet	: target="_blank"							=> se met après href
+Envoie e-mail			: <a href="mailto:mail_destinataire"> Nom_afficher </a>
+Telecharger un fichier	: <a href="fichier.ex1"> Nom_afficher </a>	=> Comme une page ou un site mais lance le telechargement du fichier en question
+
+-----Image-----
+Photo = jpeg
+image = png
+animé = gif
+<img src="lien_image" alt="description" />							=> Il est préférable de les mettres dans un paragraphe de texte  => Combinagle avec la balise <a> exemple logo Twitter
+<figure> <img exemple /> <figcaption> texte </figcaption> </figure>	=> <figure> permet de dire que l'image est importante et <figcaption> de la libelé (petit texte dessous)
+
+-----Style-----
+On peut utiliser la balise <style> </style> dans <head> pour faire du CSS mais il est conseillé de créer un autre fichier qui sera lié comme ci dessus
+On peut aussi mettre une balise <style> dans un <p> pour ajouter des modifications précises au paragraphe
+Un css externe (comme ici) permet de centraliser une mise en page sur plusieur page html
+
+-----CSS-----
+Relatif au CSS:
+class="nom" se place dans n'importe quel balise ouvrante comme le p ou le h1. Permet de ciblé en CSS
+id="nom" se place comme class mais ne peut apparaitre qu'une fois
+balise ne voulant rien dire pour l'ordinateur
+<div></div>		utilisation en dehors des balises	<div> Blabla </div> <p> Blabla </p>
+<span></span>	utilisation entre les balises 		<p> Blabla <span> Bla </span> Blabla </p>
+
+-----Structure-----
+<header>	=> En tête de page
+<nav>		=> Menu de navigation
+<section>	=> Morceau de page
+<article>	=> Représente un article independant réutilisable telle quelle sur un autre site
+<aside>		=> Bloc d'information complémentaire au texte
+<footer>	=> Pied de page
+
+-----Tableau-----
+<table> 			=> Création d'un tableau
+<tr>				=> Création d'une ligne du tableau (entre les balise <table>)
+<td>				=> Représente une cellule de ligne du tableau (entre les balise <tr>)
+<th>				=> Représente les en tête de tableau (entre les balise <tr>)
+<caption>			=> Titre du tableau
+<thead>				=> Entête du tableau
+<tbody>				=> Corps du tableau
+<tfoot>				=> pied du tableau
+colspan="numéro"	=> Fusionne numéro de ligne du tableau
+rowspan="numéro"	=> Fusionne numéro de colonne du tableau
+
+-----Formulaire-----
+<form> 												=> Création de l'espace Formulaire <form method="get/post" action="lien page traitement des donnée"> = get et post sont des valeurs/manières de transmettre les données
+<input type="texte" name="exemple" id="exemple" />	=> Création d'un champs de saisie de texte, type="texte" designe le type de saisie et name permet de le récupéré dans la page de gestion des données, id relis le champs au libelé
+=> maxlength="nombre" = se place à la suite de name/id et permet de définir un nombre maximum de caractere; value="exemple" = préremplie; placeholder="exemple" = montre un exemple en grisé qui ne prérempli pas
+=> différent type => texte = zone de saisie de texte; password = zone de texte cachant la saisie; email = saisir un email; url = saisir une adresse; tel = numéro de tel; range = créer un curseur visuel de saisi de nombre, même attribut possible que number;
+number = saisir un nombre, on peut ajouter un min="" et max="" pour limité le choix et step="" permet de définir le défilement par exemple de 10 en 10; color = selection d'une couleur; date = selection de date; search = création champs de recherche;
+checkbox = case à cocher, si suivis de checked la case est coché par défault; radio = bouton à choix, attention ils doivent porter le même name mais des value="exemple" differentes; submit = bouton, la value écrira sur le bouton;
+<label for="exemple">								=> Création d'un libelé s'affichant devant le champ, <label id="exemple"> Votre Exemple</label>
+<textarea>											=> Création d'une zone de texte à ligne multiple; rows="nbr" et clos="nbr" permette de définir une taille; on peut préremplir en écrivant un texte entre les balises <textarea> Exemple </textarea>
+<select>											=> Création d'une liste déroulante d'option (balise option dans select) contient le name et l'id
+<option>											=> Création d'une option de la balise deroulante Contient la value="exemple" si attribut selected alors selectionné par défault
+<fieldset>											=> permet d'englober dans un même cadre plusieur champs de selection
+<legend>											=> permet de donner un titre au cadre des champs selectionnés
+autofocus											=> attribut permettant que le curseur soit déjà dans un champs dès l'ouverture de la page (un seul par page)
+required											=> attribut rend champs obligatoirement remplis avant envois du formulaire
+
+-----Multimédia-----
+<audio> = permet de mettre un audio sur la page			=> src="source", controls = attribut permettant de lancer/mettre en pause le son, autoplay = lance le son des le chargements de page, loop = joue le son en boucle;
+<source> = proposer plusieurs sources pour navigateur	=> les balise source sont entre les balises audio et c'est la balise source qui contient src
+<video> = permet de mettre de la vidéo sur la page		=> fonctionne comme audio; width="" et height="" = taille de la vidéo, poster="" = affiche une image tant que la vidéo n'est pas lancé
+
+-----Responssive-----
+On peut ajouter l'attribut média="condition" pour définir si oui ou non on charge une page spéciale de css
+
+https://openclassrooms.com/fr/courses/1603881-apprenez-a-creer-votre-site-web-avec-html5-et-css3/1608357-memento-des-balises-html
+-->
